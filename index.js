@@ -11,12 +11,32 @@ function takeANumber (katzDeliLine, patronName) {
   return `Welcome, ${patronName}. You are number ${katzDeliLineLength} in line.`;
 }
 
+// NEW takeANumber
+
+  var ticket = 1;
+
+function newTakeANumber(katzDeliLine) {
+  
+
+  
+  katzDeliLine.push(ticket);
+  
+  
+  
+  return `Welcome. You're ticket number ${ticket++}`;
+}
+
+// takeANumber(katzDeliLine) => 'Welcome. You're ticket number #1' [1]
+// takeANumber(katzDeliLine) => 'Welcome. You're ticket number #2' [1,2]
+// nowServing(katzDeliLine) => 'Currently serving #1' [2]
+// takeANumber(katzDeliLine) => 'Welcome. You're ticket number #3' [2,3]
+
 
 
 
 
 //nowServing function 
-//PURPOSE: Tell which patron is to be served next. Remove that individual from the line. Or returns provided string if line is empty.
+//PURPOSE: Tell which patron is to be served next, and remove that individual from the line. Or returns provided string if line is empty.
 //Parameters: current line of patrons (katzDeliLine)
 //Return: Person that is now being served (first in line) --- OR --- string stating the line is empty
 
@@ -50,7 +70,6 @@ function currentLine (katzDeliLine) {
   }
   
   else {
-    
     //declare a new variable with an empty array that will hold the new elements created by the map function
     let mappedLine = [];
     
@@ -62,7 +81,7 @@ function currentLine (katzDeliLine) {
 
     //.join to condense the array into a single string (and adding a ", " in between each element to form the list)
     //Return the string to the currentLine function
-    return `The line is currently: ${mappedLine.join(", ")}` ;
+    return `The line is currently: ${mappedLine.join(", ")}`;
   
   } //ends else statement
 } //ends currentLine function
